@@ -1,0 +1,11 @@
+<h1>Top Headlines</h1>
+
+<p>Total Results: {{ total_articles }}</p>
+
+{% for article in all_articles %}
+  <img src="{{ article.urlToImage }}" alt="Girl in a jacket" width="100" height="100">
+  <h1><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h1>
+  <p>By: {{ article.author }} from {{ article.source.name }}</p>
+  <h3>{{ article.description|truncatewords:10 }}</h3>
+  <hr>
+{% endfor %}
